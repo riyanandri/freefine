@@ -39,5 +39,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('check-admin-password', 'AdminController@checkAdminPassword');
         // update profil
         Route::match(['get', 'post'], 'update-admin-profile', 'AdminController@updateAdminProfile');
+
+        // sektor
+        Route::get('sektors', 'SektorController@index');
+        Route::post('update-sektor-status', 'SektorController@updateSektorStatus');
+        Route::get('add-sektor', 'SektorController@add');
+        Route::post('store-sektor', 'SektorController@store');
+        Route::get('edit-sektor/{id}', 'SektorController@edit');
+        Route::post('update-sektor', 'SektorController@update');
+        Route::get('delete-sektor/{id}', 'SektorController@delete');
     });
 });

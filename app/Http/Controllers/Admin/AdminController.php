@@ -8,16 +8,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
     public function dashboard()
     {
+        Session::put('page', 'dashboard');
         return view('admin.dashboard');
     }
 
     public function updateAdminPassword(Request $request)
     {
+        Session::put('page', 'update_admin_password');
         if ($request->isMethod('post')) {
             $data = $request->all();
             // cek password lama yang dimasukkan admin jika benar

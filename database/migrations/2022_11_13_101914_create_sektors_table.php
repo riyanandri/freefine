@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvestorsTable extends Migration
+class CreateSektorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateInvestorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('investors', function (Blueprint $table) {
+        Schema::create('sektors', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('no_telp');
-            $table->string('email')->unique();
-            $table->string('alamat');
-            $table->string('kota');
-            $table->string('kecamatan');
-            $table->string('provinsi');
-            $table->string('kode_pos');
             $table->tinyInteger('status');
             $table->timestamps();
         });
@@ -35,6 +28,6 @@ class CreateInvestorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('investors');
+        Schema::dropIfExists('sektors');
     }
 }

@@ -72,10 +72,10 @@
                             <a target="_blank" href="{{ url('admin/images/photos/'.Auth::guard('admin')->user()->photo) }}">Lihat photo</a>
                             <input type="hidden" name="current_admin_photo" value="{{ Auth::guard('admin')->user()->photo }}" @endif </div>
                         </div>
-
-                        <div class="text-end">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
                 </form>
             </div>
         </div>
