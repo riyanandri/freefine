@@ -48,5 +48,15 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('edit-sektor/{id}', 'SektorController@edit');
         Route::post('update-sektor', 'SektorController@update');
         Route::get('delete-sektor/{id}', 'SektorController@delete');
+
+        // kategori
+        Route::get('categories', 'CategoryController@index');
+        Route::post('update-category-status', 'CategoryController@updateCategoryStatus');
+        Route::get('add-category', 'CategoryController@add');
+        Route::post('store-category', 'CategoryController@store');
+        Route::get('edit-category/{id}', 'CategoryController@edit');
+        Route::post('update-category', 'CategoryController@update');
+        Route::get('delete-category/{id}', 'CategoryController@delete');
+        // Route::get('append-categories-level', 'CategoryController@appendCategoryLevel');
     });
 });

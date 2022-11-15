@@ -22,6 +22,7 @@ $(document).ready(function () {
             }
         });
     });
+
     // update sektor status
     $(document).on("click", ".updateSektorStatus", function () {
         var status = $(this).children("i").attr("status");
@@ -79,4 +80,48 @@ $(document).ready(function () {
             }
           })
     });
+
+    // update category status
+    $(document).on("click", ".updateCategoryStatus", function () {
+        var status = $(this).children("i").attr("status");
+        var category_id = $(this).attr("category_id");
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'post',
+            url: '/admin/update-category-status',
+            data: {status:status, category_id:category_id},
+            success:function (resp) {
+                // alert
+                if (resp['status'] == 0) {
+                    $("#category-"+category_id).html("<i style='font-size: 20px;' class='fa fa-eye-slash' status='Inactive'></i>");
+                }else if (resp['status'] == 1){
+                    $("#category-"+category_id).html("<i style='font-size: 20px;' class='fa fa-eye' status='Active'></i>");
+                }
+            }, error:function () {
+                alert("Error");
+            }
+        });
+    });
+
+    // // append categories level
+    // $("#sektor_id").change(function(){
+    //     var sektor_id = $(this).val();
+    //     $.ajax({
+    //         headers: {
+    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //         },
+    //         type: 'get',
+    //         url: '/admin/append-categories-level',
+    //         data:{
+    //             sektor_id:sektor_id,
+    //         },
+    //         success:function(resp){
+    //             $("#appendCategoriesLevel").html(resp);
+    //         },error:function(){
+    //             alert("Error");
+    //         }
+    //     });
+    // });
 })

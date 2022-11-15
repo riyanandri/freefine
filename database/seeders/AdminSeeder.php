@@ -27,17 +27,6 @@ class AdminSeeder extends Seeder
                 'photo' => '',
                 'status' => 1,
             ],
-            [
-                'id' => 2,
-                'nama' => 'Muhammad Riyan',
-                'tipe' => 'investor',
-                'investor_id' => 1,
-                'no_telp' => '085328179759',
-                'email' => 'hiddenfoxe01@gmail.com',
-                'password' => Hash::make('riyan123'),
-                'photo' => '',
-                'status' => 1,
-            ],
         ];
 
         Admin::insert($adminRecords);

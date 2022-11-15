@@ -142,7 +142,7 @@
                     <a class="dropdown-item" href="{{ url('admin/update-admin-profile') }}"> <i class="me-2" data-feather="user"></i>Profilku</a>
                     <a class="dropdown-item" href="{{ url('admin/update-admin-password') }}"><i class="me-2" data-feather="settings"></i>Ubah Password</a>
                     <hr class="m-0">
-                    <a class="dropdown-item logout pb-0" href="{{ url('admin/logout') }}"><img src="assets/img/icons/log-out.svg" class="me-2" alt="img">Keluar</a>
+                    <a class="dropdown-item logout pb-0" href="{{ url('admin/logout') }}"><img src="{{ asset('admin/assets/img/icons/log-out.svg') }}" class="me-2" alt="img">Keluar</a>
                 </div>
             </div>
         </li>

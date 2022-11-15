@@ -67,10 +67,10 @@
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Photo</label>
                         <div class="col-lg-9">
-                            <input type="file" class="form-control" id="admin_photo" name="admin_photo" required>
-                            @if (!empty(Auth::guard('admin')->user()->photo))
+                            <input type="file" class="form-control" id="admin_photo" name="admin_photo">
+                            {{-- @if (!empty(Auth::guard('admin')->user()->photo))
                             <a target="_blank" href="{{ url('admin/images/photos/'.Auth::guard('admin')->user()->photo) }}">Lihat photo</a>
-                            <input type="hidden" name="current_admin_photo" value="{{ Auth::guard('admin')->user()->photo }}" @endif </div>
+                            <input type="hidden" name="current_admin_photo" value="{{ Auth::guard('admin')->user()->photo }}" @endif </div> --}}
                         </div>
                     </div>
                     <div class="text-end">

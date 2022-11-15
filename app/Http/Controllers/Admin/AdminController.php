@@ -59,10 +59,12 @@ class AdminController extends Controller
             $rules = [
                 'admin_name' => 'required|regex:/^[\pL\s\-]+$/u',
                 'admin_phone' => 'required|numeric',
+                'admin_photo' => 'required',
             ];
 
             $customMessages = [
                 'admin_name.required' => 'Kolom nama belum diisi',
+                'admin_photo.required' => 'Anda belum menggungah foto',
                 'admin_name.regex' => 'Kolom nama tidak valid',
                 'admin_phone.required' => 'Kolom no telp belum diisi',
                 'admin_phone.numeric' => 'No telp harus berupa angka',
@@ -105,13 +107,14 @@ class AdminController extends Controller
 
             $rules = [
                 'email' => 'required|email|max:255',
-                'password' => 'required',
+                'password' => 'required|min:8',
             ];
 
             $customMessages = [
                 'email.required' => 'Kolom email belum diisi!',
                 'email.email' => 'Email tidak valid!',
                 'password.required' => 'Kolom password belum diisi!',
+                'password.min' => 'Password minimal 8 karakter!',
             ];
 
             $this->validate($request, $rules, $customMessages);

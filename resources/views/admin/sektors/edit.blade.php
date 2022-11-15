@@ -41,10 +41,10 @@
                 <form action="{{ url('admin/update-sektor') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
-                        <input class="form-control" name="id" id="id" value="{{ $sektor->id }}" type="hidden">
+                        <input class="form-control" name="id" id="id" value="{{ $sektor['id'] }}" type="hidden">
                         <label class="col-lg-3 col-form-label">Nama Sektor</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="nama_sektor" placeholder="masukkan nama sektor" name="nama_sektor" value="{{ $sektor->nama }}">
+                            <input type="text" class="form-control" id="nama_sektor" placeholder="masukkan nama sektor" name="nama_sektor" value="{{ $sektor['nama'] }}">
                         </div>
                     </div>
 

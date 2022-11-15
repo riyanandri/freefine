@@ -6,10 +6,10 @@
                     <a href="{{ url('admin/dashboard') }}"><img src="{{ asset('admin/assets/img/icons/dashboard.svg') }}" alt="img"><span> Dashboard</span> </a>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);" class="{{ Request::is('admin/sektors') || Request::is('admin/add-sektor') || Request::is('admin/edit-sektor/*') ? 'active' : '' }}"><img src="{{ asset('admin/assets/img/icons/product.svg') }}" alt="img"></i><span> Data Master</span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);" class="{{ Request::is('admin/sektors') || Request::is('admin/add-sektor') || Request::is('admin/edit-sektor/*') || Request::is('admin/categories') ? 'active' : '' }}"><img src="{{ asset('admin/assets/img/icons/product.svg') }}" alt="img"></i><span> Data Master</span> <span class="menu-arrow"></span></a>
                     <ul>
                         <li><a href="{{ url('admin/sektors') }}" class="{{ Request::is('admin/sektors') || Request::is('admin/add-sektor') || Request::is('admin/edit-sektor/*') ? 'active' : '' }}">Sektor</a></li>
-                        <li><a href="{{ url('admin/update-admin-profile') }}" class="">Kategori</a></li>
+                        <li><a href="{{ url('admin/categories') }}" class="{{ Request::is('admin/categories') ? 'active' : '' }}">Kategori</a></li>
                         <li><a href="{{ url('admin/update-admin-profile') }}" class="">Emiten</a></li>
                     </ul>
                 </li>

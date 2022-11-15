@@ -58,23 +58,23 @@
                     @foreach ($sektors as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item['nama'] }}</td>
                         <td>
-                            @if ($item->status == 1)
-                            <a class="updateSektorStatus" id="sektor-{{ $item->id }}" sektor_id="{{ $item->id }}" href="javascript:void(0)">
+                            @if ($item['status'] == 1)
+                            <a class="updateSektorStatus" id="sektor-{{ $item['id'] }}" sektor_id="{{ $item['id'] }}" href="javascript:void(0)">
                                 <i style="font-size: 20px;" class="fa fa-eye" status="Active"></i>
                             </a>
                             @else
-                            <a class="updateSektorStatus" id="sektor-{{ $item->id }}" sektor_id="{{ $item->id }}" href="javascript:void(0)">
+                            <a class="updateSektorStatus" id="sektor-{{ $item['id'] }}" sektor_id="{{ $item['id'] }}" href="javascript:void(0)">
                                 <i style="font-size: 20px;" class="fa fa-eye-slash" status="Inactive"></i>
                             </a>
                             @endif
                         </td>
                         <td>
-                            <a class="me-3" href="{{ url('admin/edit-sektor/'.$item->id) }}">
+                            <a class="me-3" href="{{ url('admin/edit-sektor/'.$item['id']) }}">
                                 <img src="assets/img/icons/edit.svg" alt="img">
                             </a>
-                            <a href="javascript:void(0)" class="confirmDelete" module="sektor" moduleid="{{ $item->id }}">
+                            <a href="javascript:void(0)" class="confirmDelete" module="sektor" moduleid="{{ $item['id'] }}">
                                 <img src="assets/img/icons/delete.svg" alt="img">
                             </a>
                         </td>
